@@ -1,0 +1,53 @@
+/* Hero Section Styles */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0 30vh 50px;
+  background: linear-gradient(135deg, #1e1e1e 0%, #040230 50%, #1e1e1e 100%);
+  color: #e0e0e0;
+}
+
+/* Optional: Adding a subtle overlay for more depth */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Slightly darken the background for depth */
+  z-index: -1; /* Send overlay behind content */
+  pointer-events: none; /* Ensure overlay does not interfere with interactions */
+}
+
+
+.main-text {
+  max-width: 50%;
+}
+
+.main-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.main-text span {
+  color: #ff6f61; /* Highlight text color */
+}
+
+.main-text p {
+  font-size: 1.2rem;
+}
+
+.robotic-hand img {
+  max-width: 70%;
+  height: auto;
+  display: block;
+}
+
+.robotic-hand {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 70%;
+}
