@@ -26,7 +26,6 @@
   pointer-events: none; /* Ensure overlay does not interfere with interactions */
 }
 
-
 /* Navigation list */
 .nav-list {
   display: flex;
@@ -79,8 +78,6 @@
   transform-origin: left;
 }
 
-
-
 /* Active page link */
 .navbar a.active {
   color: #ffffff;
@@ -110,7 +107,6 @@
   transform-origin: left;
   background-color: transparent;
 }
-
 
 /* Hover effect for nav list items */
 .nav-list li:hover {

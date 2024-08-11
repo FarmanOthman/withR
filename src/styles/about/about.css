@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #0b0c1e, #1a1a4c);
+  overflow-x: hidden;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  flex-wrap: wrap;
+  min-height: 70vh;
+}
+
+.hero-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-content h1:hover {
+  color: #ff6464;
+  transform: scale(1.05);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  color: #ff6464;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-content p:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-top: 20px;
+}
+
+.hero-image img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about, .team, .timeline {
+  padding: 50px 10%;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.about h2, .team h2, .timeline h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #ff6464;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.about h2:hover, .team h2:hover, .timeline h2:hover {
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.about p, .team p, .timeline p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ddd;
+  max-width: 900px;
+  margin: 0 auto;
+  transition: color 0.3s ease;
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.team-member {
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.team-member h3 {
+  font-size: 1.5rem;
+  margin: 10px 0 5px;
+  color: #fff;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #ff6464;
+}
+
+.timeline-item {
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+  background-color: #151540;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.timeline-item h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ff6464;
+}
+
+.timeline-item p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero {
+    padding: 30px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .hero-image img {
+    max-width: 80%;
+  }
+
+  .team-member {
+    max-width: 200px;
+  }
+
+  .about h2, .team h2, .timeline h2 {
+    font-size: 2.4rem;
+  }
+
+  .timeline-item h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+  }
+
+  .team-member {
+    max-width: 150px;
+  }
+
+  .about h2, .team h2, .timeline h2 {
+    font-size: 2rem;
+  }
+
+  .timeline-item h3 {
+    font-size: 1.5rem;
+  }
+}

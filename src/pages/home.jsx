@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/hero.css';
-import '../styles/responsive.css';
+import '../styles/home/hero.css';
+import '../styles/home/responsive.css';
 import roboticHand from '../assets/IMG/3d-rendering-biorobots-concept.png';
 
 const HeroSection = () => {

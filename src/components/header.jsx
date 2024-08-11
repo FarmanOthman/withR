@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../styles/navbar.css';
+import { Link } from "react-router-dom";
+import '../styles/nav/navbar.css';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,10 +11,9 @@ const Header = () => {
 
     return (
         <header>
-            <div className="navbar">
+            <div className={`navbar ${isOpen ? 'active' : ''}`}>
                 <div 
                     className={`hamburger-menu ${isOpen ? 'active' : ''}`} 
-                    id="hamburger-menu" 
                     aria-label="Toggle navigation"
                     onClick={handleHamburgerClick}
                 >
@@ -23,20 +23,15 @@ const Header = () => {
                 </div>
                 <nav className={isOpen ? 'active' : ''}>
                     <ul className="nav-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">The Arts</a></li>
-                        <li><a href="#">Balance</a></li>
-                        <li><a href="#">About</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/the-arts">The Arts</Link></li>
+                    <li><Link to="/balance">Balance</Link></li>
+                    <li><Link to="/about">About</Link></li>
                     </ul>
                 </nav>
             </div>
         </header>
     );
 };
-
-document.getElementById('hamburger-menu').addEventListener('click', function() {
-    document.querySelector('.navbar').classList.toggle('active');
-  });
-  
 
 export default Header;
