@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/header.jsx";
+import Footer from "./components/footer.jsx";
 import HomePage from "./pages/home.jsx";
 import TheArtsPage from "./pages/theArts.jsx";
 import BalancePage from "./pages/balance.jsx";
@@ -16,6 +17,7 @@ function App() {
         <Route path="/balance" element={<BalancePage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }

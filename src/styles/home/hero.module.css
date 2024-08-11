@@ -1,0 +1,97 @@
+/* Hero Section Styles */
+.heroSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0 30vh 50px;
+  background: linear-gradient(135deg, #1e1e1e 0%, #040230 50%, #1e1e1e 100%);
+  color: #e0e0e0;
+  position: relative;
+  transition: background 0.3s ease; /* Smooth background transition */
+}
+
+/* Optional: Adding a subtle overlay for more depth */
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Slightly darken the background for depth */
+  z-index: -1; /* Send overlay behind content */
+  pointer-events: none; /* Ensure overlay does not interfere with interactions */
+}
+
+
+/* Main text styles */
+.mainText {
+  max-width: 50%;
+  transition: color 0.3s ease; /* Smooth text color transition */
+}
+
+.mainText h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Add transition for hover effects */
+}
+
+/* Hover effect for main heading */
+.mainText h1:hover {
+  color: #ff6f61; /* Highlight color on hover */
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.highlight {
+  color: #ff6f61; /* Highlight text color */
+}
+
+.mainText p {
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease; /* Add transition for hover effects */
+}
+
+/* Hover effect for main text paragraph */
+.mainText p:hover {
+  color: #ff6f61; /* Highlight color on hover */
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Robotic hand image styles */
+.roboticHand img {
+  max-width: 70%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease; /* Smooth filter transition */
+}
+
+/* Hover effect for robotic hand image */
+.roboticHand img:hover {
+  filter: brightness(1.1); /* Slightly brighten the image */
+}
+
+/* Robotic hand container styles */
+.roboticHand {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 70%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 90px 20px;
+  }
+
+  .mainText {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .roboticHand img {
+    max-width: 80%;
+  }
+}

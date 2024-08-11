@@ -1,8 +1,17 @@
+/* about.module.css */
+
+:root {
+  --primary-color: #ff6464;
+  --secondary-color: #e03e3e;
+  --text-color: #fff;
+  --background-color: linear-gradient(135deg, #1e1e1e 0%, #040230 50%, #1e1e1e 100%);
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  color: #fff;
-  background: linear-gradient(135deg, #0b0c1e, #1a1a4c);
+  color: var(--text-color);
+  background: var(--background-color);
   overflow-x: hidden;
 }
 
@@ -15,35 +24,35 @@ body {
   min-height: 70vh;
 }
 
-.hero-content {
+.heroContent {
   flex: 1;
   padding: 20px;
 }
 
-.hero-content h1 {
+.heroContent h1 {
   font-size: 4rem;
-  color: #fff;
+  color: var(--text-color);
   margin-bottom: 20px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.hero-content h1:hover {
-  color: #ff6464;
+.heroContent h1:hover {
+  color: var(--primary-color);
   transform: scale(1.05);
 }
 
-.hero-content p {
+.heroContent p {
   font-size: 1.5rem;
-  color: #ff6464;
+  color: var(--primary-color);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.hero-content p:hover {
-  color: #fff;
+.heroContent p:hover {
+  color: var(--text-color);
   transform: scale(1.05);
 }
 
-.hero-image {
+.heroImage {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +60,7 @@ body {
   margin-top: 20px;
 }
 
-.hero-image img {
+.heroImage img {
   max-width: 90%;
   height: auto;
   border-radius: 10px;
@@ -66,12 +75,12 @@ body {
 .about h2, .team h2, .timeline h2 {
   font-size: 2.8rem;
   margin-bottom: 30px;
-  color: #ff6464;
+  color: var(--primary-color);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .about h2:hover, .team h2:hover, .timeline h2:hover {
-  color: #fff;
+  color: var(--text-color);
   transform: translateY(-5px);
 }
 
@@ -84,26 +93,26 @@ body {
   transition: color 0.3s ease;
 }
 
-.team-members {
+.teamMembers {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 30px;
 }
 
-.team-member {
+.teamMember {
   border-radius: 10px;
   padding: 20px;
   max-width: 250px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.team-member:hover {
+.teamMember:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 
-.team-member img {
+.teamMember img {
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -112,37 +121,37 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.team-member h3 {
+.teamMember h3 {
   font-size: 1.5rem;
   margin: 10px 0 5px;
-  color: #fff;
+  color: var(--text-color);
 }
 
-.team-member p {
+.teamMember p {
   font-size: 1rem;
-  color: #ff6464;
+  color: var(--primary-color);
 }
 
-.timeline-item {
+.timelineItem {
   margin: 30px 0;
   padding: 20px;
   border-radius: 10px;
 }
 
-.timeline-item:hover {
+.timelineItem:hover {
   transform: translateY(-5px);
   background-color: #151540;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
 }
 
-.timeline-item h3 {
+.timelineItem h3 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #ff6464;
+  color: var(--primary-color);
 }
 
-.timeline-item p {
+.timelineItem p {
   font-size: 1.2rem;
   color: #ddd;
 }
@@ -155,19 +164,19 @@ body {
     text-align: center;
   }
 
-  .hero-content h1 {
+  .heroContent h1 {
     font-size: 3rem;
   }
 
-  .hero-content p {
+  .heroContent p {
     font-size: 1.2rem;
   }
 
-  .hero-image img {
+  .heroImage img {
     max-width: 80%;
   }
 
-  .team-member {
+  .teamMember {
     max-width: 200px;
   }
 
@@ -175,25 +184,25 @@ body {
     font-size: 2.4rem;
   }
 
-  .timeline-item h3 {
+  .timelineItem h3 {
     font-size: 1.8rem;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-content h1 {
+  .heroContent h1 {
     font-size: 2.5rem;
   }
 
-  .hero-content p {
+  .heroContent p {
     font-size: 1rem;
   }
 
-  .hero-image img {
+  .heroImage img {
     max-width: 100%;
   }
 
-  .team-member {
+  .teamMember {
     max-width: 150px;
   }
 
@@ -201,7 +210,7 @@ body {
     font-size: 2rem;
   }
 
-  .timeline-item h3 {
+  .timelineItem h3 {
     font-size: 1.5rem;
   }
 }

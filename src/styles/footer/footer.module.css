@@ -1,0 +1,21 @@
+.footer {
+  background: linear-gradient(135deg, #1e1e1e 0%, #040230 50%, #1e1e1e 100%);
+  color: #e0e0e0;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footerText {
+  margin: 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.footerText:hover {
+  color: #ff6f61; /* Highlight color on hover */
+  transform: scale(1.02); /* Slightly scale up on hover */
+}

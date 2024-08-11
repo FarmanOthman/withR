@@ -1,0 +1,176 @@
+/* Balance Transfer Styles */
+:root {
+  --primary-color: #ff6464;
+  --secondary-color: #e03e3e;
+  --text-color: #fff;
+  --background-color: linear-gradient(135deg, #1e1e1e 0%, #040230 50%, #1e1e1e 100%);
+}
+
+/* Scoped Body Styles for Balance Transfer */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  background: var(--background-color);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.section {
+  text-align: center;
+  margin: 70px auto;
+  padding: 20px;
+  max-width: 90%;
+  border-radius: 10px;
+}
+
+.sectionImage {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Header Styles */
+.headerH1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin: 20px 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.headerH1:hover {
+  color: var(--text-color);
+  transform: scale(1.05);
+}
+
+.headerH2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin: 20px 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.headerH2:hover {
+  color: var(--text-color);
+  transform: scale(1.05);
+}
+
+/* Paragraph Styles */
+.paragraph {
+  font-size: 1rem;
+  color: #ddd;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+/* Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formLabel {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.formInput {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.formButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.formButton:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.formButton:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.formButton:active {
+  background-color: var(--secondary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .headerH1 {
+    font-size: 1.8rem;
+  }
+
+  .headerH2 {
+    font-size: 1.6rem;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
+  }
+
+  .sectionImage {
+    max-width: 90%;
+  }
+
+  .form {
+    padding: 15px;
+  }
+
+  .formInput {
+    font-size: 0.9rem;
+  }
+
+  .formButton {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerH1 {
+    font-size: 1.6rem;
+  }
+
+  .headerH2 {
+    font-size: 1.4rem;
+  }
+
+  .paragraph {
+    font-size: 0.8rem;
+  }
+
+  .sectionImage {
+    max-width: 100%;
+  }
+
+  .form {
+    padding: 10px;
+  }
+
+  .formInput {
+    font-size: 0.8rem;
+  }
+
+  .formButton {
+    font-size: 0.8rem;
+  }
+}
