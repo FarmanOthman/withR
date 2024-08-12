@@ -1,0 +1,130 @@
+:root {
+  --primary-color: #1e1e1e;
+  --secondary-color: #040230;
+  --accent-color: #ff6f61;
+  --text-color: #333;
+  --background-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--primary-color) 100%);
+  --border-color: #ddd;
+  --hover-opacity: 0.9;
+  --focus-shadow: 0 0 0 3px rgba(255, 111, 97, 0.4);
+}
+
+/* Add Card Section Styles */
+.add-card-page {
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+/* Gradient border effect on hover */
+.add-card-page:hover {
+  border: 4px solid transparent;
+  border-image: linear-gradient(45deg, #ff006e, #ffcc00) 1;
+  border-radius: 15px;
+  transition: all 0.15s ease-in;
+}
+
+.add-card-page h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2.25rem;
+  color: var(--primary-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.add-card-page form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.add-card-page label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.add-card-page input[type="text"],
+.add-card-page input[type="number"],
+.add-card-page input[type="file"] {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+.add-card-page input[type="text"]:focus,
+.add-card-page input[type="number"]:focus,
+.add-card-page input[type="file"]:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  box-shadow: var(--focus-shadow);
+  scale: 1.03;
+}
+
+.add-card-page button {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.add-card-page button:hover {
+  background-color: var(--accent-color);
+  opacity: var(--hover-opacity);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .add-card-page {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+
+  .add-card-page h2 {
+    font-size: 1.75rem;
+  }
+
+  .add-card-page input[type="text"],
+  .add-card-page input[type="number"],
+  .add-card-page input[type="file"],
+  .add-card-page button {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-card-page {
+    padding: 1rem;
+  }
+
+  .add-card-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .add-card-page input[type="text"],
+  .add-card-page input[type="number"],
+  .add-card-page input[type="file"],
+  .add-card-page button {
+    font-size: 0.75rem;
+  }
+}

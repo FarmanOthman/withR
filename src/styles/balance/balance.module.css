@@ -6,16 +6,6 @@
   --background-color: linear-gradient(135deg, #1e1e1e 0%, #040230 50%, #1e1e1e 100%);
 }
 
-/* Scoped Body Styles for Balance Transfer */
-body {
-  font-family: 'Roboto', sans-serif;
-  color: var(--text-color);
-  background: var(--background-color);
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
 .section {
   text-align: center;
   margin: 70px auto;
