@@ -1,71 +1,72 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/arts/arts.css';
-import IMG1 from '../assets/IMG/birmingham-museums-trust-sJr8LDyEf7k-unsplash.jpg';
-import IMG2 from '../assets/IMG/adrianna-geo-1rBg5YSi00c-unsplash.jpg';
 
 const ArtGallery = () => {
-  const [cards, setCards] = useState([
-    {
-      title: 'Artwork Title 1',
-      artist: 'John Doe',
-      price: 500,
-      imgSrc: IMG1,
-    },
-    {
-      title: 'Artwork Title 2',
-      artist: 'Jane Smith',
-      price: 750,
-      imgSrc: IMG2,
-    },
-  ]);
+  const [cards, setCards] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null);
 
-  const handleAddCard = (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    const fetchCards = async () => {
+      try {
+        const response = await fetch('/api/cards');
+        const data = await response.json();
+        setCards(data);
+      } catch (error) {
+        console.error('Error fetching cards:', error);
+      }
+    };
 
-    const title = e.target.title.value;
-    const artist = e.target.artist.value;
-    const price = e.target.price.value;
-    const file = e.target.artImage.files[0];
+    fetchCards();
+  }, []);
 
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        setCards([
-          ...cards,
-          {
-            title,
-            artist,
-            price,
-            imgSrc: event.target.result,
-          },
-        ]);
-      };
-      reader.readAsDataURL(file);
-    }
+  const openModal = (card) => {
+    setSelectedCard(card);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedCard(null);
   };
 
   return (
     <main>
-      {/* Show Add Card Button */}
       <section className="show-add-card">
         <button onClick={() => window.location.href = '/add-card'}>
           Add New Artwork
         </button>
       </section>
 
-      {/* Card Section */}
       <section className="card-container">
-        {cards.map((card, index) => (
-          <div className="card" key={index}>
-            <img src={card.imgSrc} alt={card.title} />
-            <div className="card-content">
-              <h3>{card.title}</h3>
-              <p>Artist: {card.artist}</p>
-              <p>Price: ${card.price}</p>
+        {cards.length > 0 ? (
+          cards.map((card) => (
+            <div className="card" key={card.id} onClick={() => openModal(card)}>
+              <img src={card.img_url} alt={card.title} />
+              <div className="card-content">
+                <h3>{card.title}</h3>
+                <p>Artist: {card.artist}</p>
+                <p>Price: ${card.price}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p>No artworks available</p>
+        )}
       </section>
+
+      {modalOpen && selectedCard && (
+        <div className={`modal ${modalOpen ? 'open' : ''}`}>
+          <div className="modal-content">
+            <span className="close" onClick={closeModal}>&times;</span>
+            <img src={selectedCard.img_url} alt={selectedCard.title} />
+            <h3>{selectedCard.title}</h3>
+            <p>Artist: {selectedCard.artist}</p>
+            <p>Price: ${selectedCard.price}</p>
+            <p>{selectedCard.description}</p>
+          </div>
+        </div>
+      )}
     </main>
   );
 };

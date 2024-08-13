@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.282241fc.css",
+    "main.js": "/static/js/main.8608aa6a.js",
+    "static/media/3d-rendering-biorobots-concept.png": "/static/media/3d-rendering-biorobots-concept.2b6df3d20830a8620b0f.png",
+    "static/media/people-using-mobile-bank-remittance-money.png": "/static/media/people-using-mobile-bank-remittance-money.d3f4e9795960c235bac1.png",
+    "static/media/smart-home-background-with-smartphone-control.png": "/static/media/smart-home-background-with-smartphone-control.d44c7f3700688fbb8c2f.png",
+    "static/media/young-businessman-using-mobile-phone-office-looking-camera.png": "/static/media/young-businessman-using-mobile-phone-office-looking-camera.bef1efb9d8a4a88dc4b1.png",
+    "static/media/portrait-handsome-smiling-businessman-office.png": "/static/media/portrait-handsome-smiling-businessman-office.a2373943fdcdbb166d83.png",
+    "static/media/flat-design-cryptocurrency-concept-with-device-removebg-preview (1).png": "/static/media/flat-design-cryptocurrency-concept-with-device-removebg-preview (1).dbae4b7db107b41713cb.png",
+    "index.html": "/index.html",
+    "main.282241fc.css.map": "/static/css/main.282241fc.css.map",
+    "main.8608aa6a.js.map": "/static/js/main.8608aa6a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.282241fc.css",
+    "static/js/main.8608aa6a.js"
+  ]
+}

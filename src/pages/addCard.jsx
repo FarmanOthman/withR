@@ -2,31 +2,41 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/arts/addCard.css';
 
-const AddCard = ({ addCard }) => {
-  const navigate = useNavigate(); // Use useNavigate instead of useHistory
+const AddCard = () => {
+  const navigate = useNavigate();
   const [card, setCard] = useState({
     title: '',
     artist: '',
     price: '',
-    imgSrc: '',
+    description: '', // Add description field
   });
 
-  const handleAddCard = (e) => {
+  const handleAddCard = async (e) => {
     e.preventDefault();
     const file = e.target.artImage.files[0];
 
     if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        addCard({
-          title: card.title,
-          artist: card.artist,
-          price: card.price,
-          imgSrc: event.target.result,
+      const formData = new FormData();
+      formData.append('title', card.title);
+      formData.append('artist', card.artist);
+      formData.append('price', card.price);
+      formData.append('description', card.description); // Append description
+      formData.append('artImage', file); // Append the file as binary
+
+      try {
+        const response = await fetch('/api/cards', {
+          method: 'POST',
+          body: formData, // Send the FormData object
         });
-        navigate('/'); // Use navigate instead of history.push
-      };
-      reader.readAsDataURL(file);
+
+        if (response.ok) {
+          navigate('/'); // Redirect to home page
+        } else {
+          console.error('Failed to add card');
+        }
+      } catch (error) {
+        console.error('Error adding card:', error);
+      }
     }
   };
 
@@ -62,6 +72,15 @@ const AddCard = ({ addCard }) => {
           required
           value={card.price}
           onChange={(e) => setCard({ ...card, price: e.target.value })}
+        />
+
+        <label htmlFor="art-description">Description:</label> {/* Add description field */}
+        <textarea
+          id="art-description"
+          name="description"
+          required
+          value={card.description}
+          onChange={(e) => setCard({ ...card, description: e.target.value })}
         />
 
         <label htmlFor="art-image">Artwork Image:</label>

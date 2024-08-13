@@ -57,13 +57,13 @@
 .add-card-page input[type="text"],
 .add-card-page input[type="number"],
 .add-card-page input[type="file"] {
+  color: #333;
   padding: 0.75rem;
   margin-bottom: 1rem;
   border-radius: 6px;
   border: 1px solid var(--border-color);
   background: #fff;
   font-size: 1rem;
-  color: var(--text-color);
   transition: border-color 0.3s ease;
 }
 
@@ -74,6 +74,7 @@
   outline: none;
   box-shadow: var(--focus-shadow);
   scale: 1.03;
+  transition: all 0.15s ease-in;
 }
 
 .add-card-page button {
