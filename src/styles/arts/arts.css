@@ -1,9 +1,14 @@
+/* Base Styles */
 :root {
   --primary-color: #1e1e1e;
   --secondary-color: #040230;
   --accent-color: #ff6f61;
   --text-color: #333;
   --background-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--primary-color) 100%);
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-hover-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Card Container Grid Layout */
@@ -12,21 +17,21 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
-  transition: background 0.3s ease;
+  transition: background var(--transition-speed) ease;
 }
 
 /* Card Styles */
 .card {
   background-color: #2b2b2b;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px var(--shadow-color);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
 .card img {
@@ -34,7 +39,7 @@
   height: 200px;
   object-fit: cover;
   display: block;
-  transition: filter 0.3s ease;
+  transition: filter var(--transition-speed) ease;
 }
 
 .card img:hover {
@@ -70,15 +75,16 @@
   background-color: var(--primary-color);
   color: #fff;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: var(--border-radius);
   font-size: 1.2rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  cursor: pointer;
 }
 
 .show-add-card button:hover {
   background-color: var(--accent-color);
   transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Modal Styles */
@@ -95,7 +101,7 @@
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
 }
 
 .modal.open {
@@ -108,6 +114,7 @@
   border-radius: 12px;
   padding: 20px;
   max-width: 600px;
+  max-height: 90%;
   width: 90%;
   position: relative;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -118,15 +125,14 @@
 
 .modal-content img {
   width: 100%;
-  max-width: 300px;
+  max-width: 30vh; 
   height: auto;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   margin-bottom: 15px;
 }
 
 .modal-content h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   font-size: 2rem;
   color: var(--primary-color);
 }
@@ -139,21 +145,202 @@
 
 .close {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 1.8rem;
+  top: 10px; 
+  right: 10px; 
+  font-size: 2.5rem;
   cursor: pointer;
   color: var(--primary-color);
-  transition: color 0.3s ease;
+  transition: color var(--transition-speed) ease;
 }
 
 .close:hover {
   color: var(--accent-color);
 }
 
+/* CSS for the Delete Button */
+.delete-button {
+  margin: 3px 10px;
+  padding: 12px 24px; /* Slightly larger padding for a more prominent button */
+  background-color: var(--accent-color); /* Accent color for consistency */
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius); /* Increased border-radius for a smoother look */
+  font-size: 1.2rem;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease; /* Added box-shadow transition */
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #e65c53; /* Darker shade on hover */
+  transform: scale(1.1); /* Slightly larger scale for emphasis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for depth on hover */
+}
+
+/* Form Edit Card Styles */
+.form-edit-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px var(--shadow-color);
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
+  z-index: 1000;
+}
+
+.form-edit-card.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: var(--border-radius);
+  border: 2px solid #ff6f61;
+  background-color: #040230;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.edit-button {
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 8px;
+  border-radius: var(--border-radius);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 10px 10px 3px;
+  padding: 12px 24px;
+  transition: background-color .3s ease, transform .3s ease, box-shadow .3s ease;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+
+.edit-button:hover {
+  background-color: #e04e4e;
+}
+
+.cancel-button {
+  background-color: #ddd;
+}
+
+.cancel-button:hover {
+  background-color: #ccc;
+}
+
+/* Search Bar Styles */
+.search-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.search-container input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.search-container input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.search-container .search-button {
+  margin-top: 10px;
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.search-container .search-button:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-container .clear-button {
+  margin-top: 5px;
+  padding: 10px 20px;
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.search-container .clear-button:hover {
+  background-color: #bbb;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .card-container {
     grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .modal-content, .form-edit-card {
+    width: 100%;
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .search-container input {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }

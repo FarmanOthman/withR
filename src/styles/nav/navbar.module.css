@@ -3,8 +3,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  background: linear-gradient(135deg, #1e1e1e 0%, #040230 50%, #1e1e1e 100%);
-  color: #ffffff;
   position: sticky;
   top: 0;
   z-index: 2;

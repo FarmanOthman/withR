@@ -4,7 +4,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 100px 0 30vh 50px;
-  background: linear-gradient(135deg, #1e1e1e 0%, #040230 50%, #1e1e1e 100%);
   color: #e0e0e0;
   position: relative;
   transition: background 0.3s ease; /* Smooth background transition */
@@ -14,7 +13,8 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   color: var(--text-color);
-  background: var(--background-color);
+  background: rgb(2,0,36);
+  background: linear-gradient(310deg, rgba(2,0,36,1) 9%, rgba(9,9,121,1) 58%, rgba(140,0,0,0.8374999658066351) 100%);
   overflow-x: hidden;
 }
 

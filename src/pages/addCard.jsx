@@ -8,7 +8,7 @@ const AddCard = () => {
     title: '',
     artist: '',
     price: '',
-    description: '', // Add description field
+    description: '',
   });
 
   const handleAddCard = async (e) => {
@@ -20,17 +20,17 @@ const AddCard = () => {
       formData.append('title', card.title);
       formData.append('artist', card.artist);
       formData.append('price', card.price);
-      formData.append('description', card.description); // Append description
-      formData.append('artImage', file); // Append the file as binary
+      formData.append('description', card.description);
+      formData.append('artImage', file);
 
       try {
         const response = await fetch('/api/cards', {
           method: 'POST',
-          body: formData, // Send the FormData object
+          body: formData,
         });
 
         if (response.ok) {
-          navigate('/'); // Redirect to home page
+          navigate('/'); // Redirect to the home page after successful submission
         } else {
           console.error('Failed to add card');
         }
@@ -74,7 +74,7 @@ const AddCard = () => {
           onChange={(e) => setCard({ ...card, price: e.target.value })}
         />
 
-        <label htmlFor="art-description">Description:</label> {/* Add description field */}
+        <label htmlFor="art-description">Description:</label>
         <textarea
           id="art-description"
           name="description"
